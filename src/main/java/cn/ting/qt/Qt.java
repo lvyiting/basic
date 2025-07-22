@@ -1,8 +1,15 @@
 package cn.ting.qt;
 
 import java.util.Map;
+import java.util.Objects;
+import java.util.Random;
 import java.util.SortedMap;
 import java.util.TreeMap;
+import java.util.concurrent.ThreadLocalRandom;
+
+import cn.ting.current.entity.JobBasic;
+import cn.ting.current.entity.JobStats;
+import com.google.common.hash.Hashing;
 import org.junit.Test;
 
 /**
@@ -59,4 +66,24 @@ public class Qt {
 		// 查找大于等于 3 的最小键
 		System.out.println("Ceiling key for 3: " + treeMap.ceilingKey(3));
 	}
+
+	@Test
+	public void test3() {
+		JobBasic jobBasic = new JobBasic(1, "Java高级工程师", 30000, "负责招聘平台后端架构开发");
+		JobBasic jobBasic2 = new JobBasic(1, null, 30000, "负责招聘平台后端架构开发");
+
+		System.out.println(Objects.equals(jobBasic.getTitle(),"工程师"));
+		System.out.println(Objects.equals(jobBasic2.getTitle(),"工程师"));
+
+		System.out.println(jobBasic.getTitle().equals("工程师"));
+		System.out.println(jobBasic2.getTitle().equals("工程师"));
+	}
+
+	@Test
+	public void test4() {
+		System.out.println(Math.round(1.245*100)/100.0);
+		System.out.println(Math.round(1.243*100)/100.0);
+		System.out.println(Math.round(1.248*100)/100.0);
+	}
+
 }
