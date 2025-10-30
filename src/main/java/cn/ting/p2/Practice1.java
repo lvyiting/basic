@@ -93,4 +93,22 @@ public class Practice1 {
 		System.out.println(map.getOrDefault("1", "不存在"));
 		System.out.println(map.getOrDefault("3", "不存在"));
 	}
+
+	/**
+	 * 测试putIfAbsent方法
+	 * 存在则不处理直接返回对应值
+	 * 不存在则新增并返回
+	 * 应用场景：不涉及函数式表达的新增操作
+	 */
+	@Test
+	public void test6() {
+		HashMap<String, String> map = new HashMap<>();
+		map.put("1", "原始");
+		map.put("2", "原始");
+		String s1 = map.putIfAbsent("1", "进化");
+		String s2 = map.putIfAbsent("3", "进化");
+		System.out.println(s1);
+		System.out.println(s2);
+		System.out.println(map);
+	}
 }
