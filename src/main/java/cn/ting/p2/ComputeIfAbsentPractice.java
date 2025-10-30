@@ -10,7 +10,7 @@ import org.junit.Test;
  * @author : lvyiting
  * @date : 2025/10/30
  **/
-public class Practice1 {
+public class ComputeIfAbsentPractice {
 
 	/**
 	 * 测试computeIfAbsent方法
